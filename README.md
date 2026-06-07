@@ -20,6 +20,7 @@ Stage your changes using `git add` and then fire up the tool:
 ```bash
 git add .
 aic
+```
 
 <img width="683" height="192" alt="image" src="https://github.com/user-attachments/assets/550c59f6-743f-44ab-bf3b-b1f7f91d814f" />
 

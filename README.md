@@ -4,16 +4,18 @@ A lightweight, fast Git CLI tool written in Go that automatically generates 3 di
 
 ---
 
-## 🌟 Features
+## Features
 
 * **AI-Powered:** Analyzes your staged changes (`git diff --cached`) using the advanced **Gemini 3.5 Flash** model.
 * **Conventional Commits Standard:** Ensures all generated options strictly follow the `<type>: <description>` convention (e.g., `feat:`, `fix:`, `docs:`, `refactor:`).
+* **Smart Configuration:** Securely saves your API key locally. Set it once and forget it, no need to export environment variables for every new terminal session.
+* **Colorized UI:** Clean and readable terminal output with color-coded feedback for a better developer experience.
 * **Context Aware:** Allows you to append additional context or custom instructions from the command line to guide the AI.
 * **Pure Go:** Compiles into a single lightweight binary, making it extremely fast and easy to distribute.
 
 ---
 
-## 🛠️ Installation
+## Installation
 
 ### Prerequisites
 * [Go](https://go.dev/doc/install) (version 1.21 or higher recommended)
@@ -45,9 +47,11 @@ A lightweight, fast Git CLI tool written in Go that automatically generates 3 di
 
 ---
 
-## 🔑 Environment Setup
+## Configuration (API Key)
 
-Before using the tool, you need to acquire a Gemini API key from Google AI Studio and expose it as an environment variable in your terminal.
+Before using the tool, you need a Gemini API key from [Google AI Studio](https://aistudio.google.com/). You no longer need to manually export environment variables every time. You can set up your key using one of the following methods:
 
+### Method 1: The Config Flag (Recommended)
+You can set or update your API key globally at any time using the `-config` flag. The tool will save it securely in your home directory (`~/.lazy-commit-config.json`).
 ```bash
-export GEMINI_API_KEY="your_actual_gemini_api_key_here"
+aic -config "your_actual_gemini_api_key_here"
